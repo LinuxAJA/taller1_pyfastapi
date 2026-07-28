@@ -2,6 +2,9 @@ from views import trainee_view
 from templates import trainee_template
 
 def main():
+    
+    trainee_view.init_app_data()  # Inicializa los datos de la aplicación
+    
     while True:
         # Registrar un aprendiz
         trainee_view.register_trainee_view()

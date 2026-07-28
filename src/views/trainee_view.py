@@ -1,6 +1,9 @@
 from models import trainee_model
 from templates import trainee_template
 
+def init_app_data():
+    """Inicializa los datos de la aplicación, creando la tabla de aprendices si no existe."""
+    trainee_model.load_data()
 
 def register_trainee_view():
     """Lógica para procesar el registro de un aprendiz desde la vista."""
