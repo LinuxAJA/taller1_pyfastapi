@@ -1,4 +1,10 @@
 # 📘 Título y descripción
+Nombre: Carlos Andrés Castro Jaramillo
+Ficha: 3406204
+Competencias: 
+* Elaboración de la propuesta técnica para la solución de software.
+* Implantación del software
+
 ## Sistema de Registro de Aprendices SENA
 Proyecto en Python para la gestión de aprendices SENA mediante interfaz por consola.
 
@@ -12,6 +18,7 @@ Proyecto en Python para la gestión de aprendices SENA mediante interfaz por con
 
 # 🗂️ Estructructa del Proyecto 
 
+```markdown
 taller1_pyfastapi/
 │
 ├── src/
@@ -36,3 +43,4 @@ taller1_pyfastapi/
 ├── .gitignore               # Archivos ignorados por Git
 ├── README.md                # Documentación del proyecto
 └── requirements.txt         # Dependencias (FastAPI, Uvicorn, Pydantic, etc.)
+```
