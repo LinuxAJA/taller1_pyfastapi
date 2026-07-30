@@ -1,50 +1,49 @@
 import json
-import os
-# Base de datos en archivo JSON 
-DATABASE_FILE = os.path.join(os.path.dirname(__file__),"trainees.json")
+from pathlib import Path
+
+# Configuración dinámica de la ruta absoluta a data/aprendices.json
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
+DATA_DIR = BASE_DIR / "data"
+DATA_FILE = DATA_DIR / "trainees.json"
 
 trainees = []
 
-# Crea la carpeta data/ y el archivo trainees.json si no existen
 def ensure_data_file_exists():
-    """Asegura que el archivo de datos exista, creándolo si es necesario."""
-    if not os.path.exists(DATABASE_FILE):
-        os.makedirs(os.path.dirname(DATABASE_FILE), exist_ok=True)
-        with open(DATABASE_FILE, "w", encoding="utf-8") as file:
-            json.dump([], file)  # Inicializa con una lista vacía
+    """Garantiza la existencia de la carpeta data y el archivo JSON."""
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    if not DATA_FILE.exists():
+        with DATA_FILE.open("w", encoding="utf-8") as f:
+            json.dump([], f, ensure_ascii=False, indent=4)
 
-def load_data():
-    """Carga los datos de aprendices desde el archivo JSON."""
+def load_from_json():
+    """Carga los aprendices guardados en el archivo JSON."""
     global trainees
-    if os.path.exists(DATABASE_FILE):
-        with open(DATABASE_FILE, "r", encoding="utf-8") as file:
-            try:
-                trainees = json.load(file)
-            except json.JSONDecodeError:
-                trainees = []
-    else:
+    ensure_data_file_exists()
+    try:
+        with DATA_FILE.open("r", encoding="utf-8") as f:
+            trainees = json.load(f)
+    except (json.JSONDecodeError, FileNotFoundError):
         trainees = []
-        
-def save_data():
-    """Guarda los datos de aprendices en el archivo JSON."""
-    with open(DATABASE_FILE, "w", encoding="utf-8") as file:
-        json.dump(trainees, file, ensure_ascii=False, indent=4)
+    return trainees
+
+def save_to_json():
+    """Guarda los aprendices en el archivo JSON."""
+    ensure_data_file_exists()
+    with DATA_FILE.open("w", encoding="utf-8") as f:
+        json.dump(trainees, f, ensure_ascii=False, indent=4)
 
 def get_all():
-    """Obtiene todos los aprendices registrados."""
     return trainees
 
 def search_by_document(document):
-    """Busca un aprendiz por su número de documento."""
     for a in trainees:
         if a["documento"] == document:
             return a
     return None
 
 def register_trainee(new_trainee):
-    """Registra un nuevo aprendiz si no existe previamente."""
     if search_by_document(new_trainee["documento"]):
-        return False  # Ya existe un aprendiz con este documento
+        return False
     trainees.append(new_trainee)
-    save_data()
+    save_to_json()
     return True

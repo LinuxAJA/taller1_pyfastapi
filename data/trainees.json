@@ -1,0 +1,42 @@
+[
+    {
+        "tipo_doc": "CC",
+        "documento": "6666",
+        "nombre": "Carlos",
+        "ficha": "123",
+        "programa": "Adso",
+        "email": "cacjx84@gmail.com"
+    },
+    {
+        "tipo_doc": "CCC",
+        "documento": "212212",
+        "nombre": "Carlos Castro",
+        "ficha": "1223",
+        "programa": "Adso",
+        "email": "email1@gmail.com"
+    },
+    {
+        "tipo_doc": "TI",
+        "documento": "6666",
+        "nombre": "Fabio Flores",
+        "ficha": "4444",
+        "programa": "Adso",
+        "email": "email2@gmail.com"
+    },
+    {
+        "tipo_doc": "CC",
+        "documento": "111",
+        "nombre": "Carlos",
+        "ficha": "13",
+        "programa": "Adso",
+        "email": "mail@mail.com"
+    },
+    {
+        "tipo_doc": "CC",
+        "documento": "11",
+        "nombre": "Carlangas",
+        "ficha": "12345",
+        "programa": "Adso",
+        "email": "aprendi@gmail.com"
+    }
+]
