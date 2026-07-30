@@ -1,12 +1,13 @@
+# Capa TEMPLATE: Interfaz de usuario por consola para registrar aprendices
+
+
 def get_trainee_input():
-    """Solicita al usuario los datos del aprendiz incluyendo el correo."""
-    print("\n--- 📝 REGISTRO DE APRENDIZ ---")
+    """Solicita al usuario los datos para registrar un aprendiz."""
     id = input("Número de documento: ").strip()
     type_id = input("Tipo de documento (CC/TI/CE): ").strip().upper()
     name = input("Nombre completo: ").strip().title()
     group_code = input("Número de Ficha: ").strip()
     program = input("Programa de Formación: ").strip().title()
-    email = input("Correo electrónico: ").strip().lower()
 
     return {
         "tipo_doc": type_id,
@@ -14,28 +15,24 @@ def get_trainee_input():
         "nombre": name,
         "ficha": group_code,
         "programa": program,
-        "email": email,
     }
 
 
 def display_message(message):
     icons = {"success": "✅ ", "error": "⚠️ ", "info": "ℹ️ "}
-    print(f"\n{icons.get(message['type'], '')} {message['text']}")
+    print(f"{icons.get(message['type'], '')} {message['text']}")
 
 
-def display_trainees_list(trainees_list):
-    if not trainees_list:
-        print("\nNo hay aprendices registrados.")
+def display_trainee_list(trainee):
+    """Muestra la lista de aprendices registrados."""
+    if not trainee:
+        print("No hay aprendices registrados.")
         return
 
     print("\n--- Lista de Aprendices Registrados ---")
-    for trai in trainees_list:
+    for trai in trainee:
         print(
-            f"Doc: {trai['tipo_doc']} {trai['documento']} | "
-            f"Nombre: {trai['nombre']} | "
-            f"Ficha: {trai['ficha']} | "
-            f"Programa: {trai['programa']} | "
-            f"Email: {trai['email']}"
+            f"Documento: {trai['documento']}, Nombre: {trai['nombre']}, Ficha: {trai['ficha']}, Programa: {trai['programa']}"
         )
 
 

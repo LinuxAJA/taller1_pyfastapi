@@ -1,0 +1,16 @@
+[
+    {
+        "tipo_doc": "CCC",
+        "documento": "212212",
+        "nombre": "Carlos Castro",
+        "ficha": "1223",
+        "programa": "Adso"
+    },
+    {
+        "tipo_doc": "TI",
+        "documento": "6666",
+        "nombre": "Fabio Flores",
+        "ficha": "4444",
+        "programa": "Adso"
+    }
+]
