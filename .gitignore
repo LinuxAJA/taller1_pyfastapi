@@ -1,6 +1,12 @@
 structure.sh
 enfolded.bat
-/data/aprendices.json
+/data/trainees.json
+/data/trainees.csv
+/src/__pycache__/
 /src/models/__pycache__/
+/src/schemas/__pycache__/
+/src/services/__pycache__/
 /src/templates/__pycache__/
 /src/views/__pycache__/
+tests/__pycache__/
+
