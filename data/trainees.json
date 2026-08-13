@@ -38,5 +38,21 @@
         "ficha": "12345",
         "programa": "Adso",
         "email": "aprendi@gmail.com"
+    },
+    {
+        "tipo_doc": "CC",
+        "documento": "123456789",
+        "nombre": "Juan",
+        "ficha": "123456",
+        "programa": "ADSO",
+        "email": "juan@sena.edu.co"
+    },
+    {
+        "tipo_doc": "CC",
+        "documento": "1234324324",
+        "nombre": "Juan",
+        "ficha": "123456",
+        "programa": "ADSO",
+        "email": "juan@sena.edu.co"
     }
 ]

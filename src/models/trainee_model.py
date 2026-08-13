@@ -46,7 +46,7 @@ def search_by_document(document):
 
 def register_trainee(new_trainee):
     if search_by_document(new_trainee["documento"]):
-        return False
+        return False 
     trainees.append(new_trainee)
     save_to_json()
     return True
